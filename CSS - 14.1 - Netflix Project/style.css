@@ -1,0 +1,353 @@
+:root {
+    --white-color: white;
+    --black-color: black;
+    --red-color: red;
+}
+
+/* The below default will apply to all HTML content that containes 
+the below content in HTML */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'mulish';
+}
+
+li {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* This is specified once that will only apply 
+to place where we gonna define the classes
+- the classes are belowed */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Flex classes */
+.display-flex {
+    display: flex;
+}
+
+.display-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-content-center {
+    align-content: center;
+}
+
+.row-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-flex-start {
+    justify-content: flex-start;
+}
+
+/* position classes*/
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+/* width classes by its total count */
+
+.width-content-1 {
+    width: 100%;
+}
+
+
+.width-content-2 {
+    width: 50%;
+}
+
+
+
+.width-content-3 {
+    width: 33.33%;
+}
+
+
+.width-content-4 {
+    width: 25%;
+}
+
+.width-content-5 {
+    width: 20%;
+}
+
+/* Main CSS start from here */
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Mulish';
+}
+
+/* Header section  */
+
+header {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+}
+
+main {
+    background-color: black;
+}
+
+.nav-dropdown select,
+.sign-in button {
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.nav-dropdown select {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: -1px solid white;
+}
+
+.sign-in button {
+    background-color: var(--red-color);
+    border: none;
+    color: var(--white-color);
+}
+
+
+/* top title section */
+#top-section-background {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.663), rgba(0, 0, 0, 0.5)),
+        url('Images/Background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.top-section,
+.bottom-search {
+    color: var(--white-color);
+    gap: 15px;
+    text-align: center;
+}
+
+.top-title h1 {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.top-title h2 {
+    font-size: 15px;
+    padding: 15px 0;
+}
+
+.top-title p {
+    text-align: center;
+    padding: 10px 0 0px 0;
+}
+
+.top-search input,
+.bottom-search input{
+    padding: 10px 70px 10px 5px;
+    background-color: rgba(0, 0, 0, 0.464);
+    border-radius: 3px;
+    border: 1px solid var(--white-color);
+}
+
+.top-search button,
+.bottom-search button {
+    color: var(--white-color);
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 30px 10px 25px;
+    background-color: red;
+    border-radius: 3px;
+    border: none;
+}
+
+/* Tranding Movies section  */
+
+.tranding-movies,
+.More-reason,
+.Frequently{
+    color: var(--white-color);
+    padding-top: 60px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+h3 {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    font-size: 30px;
+}
+
+
+.movies-img {
+    position: relative;
+    margin: 20px;
+}
+
+.movies-img img {
+
+    border-radius: 10px;
+}
+
+.movie-character {
+    position: absolute;
+    top: 40%;
+    font-size: 100px;
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* More reason to join  */
+.More-reason .width-content-4 {
+    margin: 20px;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.more-reason-content {
+    background-image: linear-gradient(to right, #910a35, #270349);
+    padding: 15px 10px;
+    position: relative;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.more-reason-content h4 {
+    font-size: 25px;
+}
+
+.more-reason-content h4,
+p,
+i {
+    padding: 10px;
+}
+
+
+.icon i {
+    font-size: 50px;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    color: rgb(190, 18, 190);
+}
+
+/* Frequently asked questions */
+.question-1 {
+    background-color: rgba(128, 128, 128, 0.367);
+    padding: 20px 30px;
+    position: relative;
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.question-1 span{
+    float: right;
+    font-weight: 800;
+} 
+
+
+/* bottom email */
+
+.bottom-email-P p{
+    text-align: center;
+    font-size: 15px;
+    color: var(--white-color);
+}
+
+.bottom-search {
+    padding: 20px 0;
+}
+
+.bottom-search input{
+    width: 700px;
+    padding: 20px 70px 20px 10px;
+}
+
+
+.bottom-search button {
+    padding: 20px 30px 20px 25px;
+
+}
+
+
+/* Footer section */
+
+footer {
+    background-color: black;
+    color: var(--white-color);
+}
+
+
+.footer-text ul li a{
+    padding: 10px;
+    color: var(--white-color);
+}
+
+.footer-content .width-content-4{
+    padding: 10px 30px;
+}
+
+.footer-dropdown select{
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.footer-dropdown select {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: -1px solid white;
+}
