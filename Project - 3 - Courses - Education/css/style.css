@@ -1,0 +1,666 @@
+:root {
+    --light-color: white;
+    --dark-color: black;
+    --theme-color: #AE59FF;
+    --object-color: #FF9F67;
+    --text-main: #4255a4;
+    --text-other: #6E7697;
+}
+
+/* The below default will apply to all HTML content that containes 
+the below content in HTML */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'mulish';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Josefin Sans';
+}
+
+
+li {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* This is specified once that will only apply 
+to place where we gonna define the classes
+- the classes are belowed */
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Flex classes */
+.display-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.row-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-flex-start {
+    justify-content: flex-start;
+}
+
+/* position classes*/
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+/* width classes by its total count */
+
+.width-content-1 {
+    width: 100%;
+}
+
+
+.width-content-2 {
+    width: 50%;
+}
+
+
+
+.width-content-3 {
+    width: 33.33%;
+}
+
+
+.width-content-4 {
+    width: 25%;
+}
+
+/* Main CSS start here  */
+
+/* Navbar section*/
+header {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+.dropdown-menu {
+    top: 100%;
+    left: 0;
+    width: 110px;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(30px);
+}
+
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu ul li {
+    padding: 10px 20px;
+}
+
+
+nav ul li a {
+    color: var(--light-color);
+    margin: 0 15px;
+    padding: 30px 0;
+}
+
+
+.header-btn button,
+.title-btn button,
+.course-btn button,
+.explore-btn button,
+.about-area-3-btn button {
+    padding: 15px 35px;
+    border-radius: 5px;
+    border: none;
+    color: var(--light-color);
+    font-weight: 600;
+    background-color: var(--object-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+
+}
+
+.header-btn button::after,
+.title-btn button::after,
+.course-btn button::after,
+.explore-btn button::after,
+.about-area-3-btn button::after {
+    content: '';
+    position: absolute;
+    background-color: var(--theme-color);
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    z-index: -1;
+}
+
+
+.header-btn button:hover::after,
+.title-btn button:hover::after,
+.course-btn button:hover::after,
+.explore-btn button:hover::after,
+.about-area-3-btn button:hover::after {
+    left: 0%;
+    top: 0;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.header-btn button{
+    margin: 0 10px;
+}
+
+.Login-btn button {
+    padding: 15px 33px;
+    border-radius: 5px;
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
+    font-weight: 600;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+
+}
+
+.Login-btn button::after {
+    content: '';
+    position: absolute;
+    background-color: var(--theme-color);
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.Login-btn button:hover::after {
+    left: 0%;
+    top: 0;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-icon {
+    color: var(--light-color);
+    font-size: 40px;
+    margin-left: 20px;
+}
+
+/* Top-Title-section */
+
+#banner {
+    background-image: url(../images/h1_hero.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 800px;
+}
+
+.Top-Title-section {
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+
+.Top-title-content {
+    position: absolute;
+    top: 30%;
+}
+
+.title h1,
+.title p {
+    padding: 15px 0;
+}
+
+.title h1 {
+    color: var(--light-color);
+    font-size: 60px;
+    line-height: 70px;
+}
+
+.title p {
+    color: var(--light-color);
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.title-btn button {
+    padding: 17px 40px;
+}
+
+
+/* Features Section */
+
+.features-items {
+    margin: 20px 0px 20px 20px;
+    background-color: var(--light-color);
+    background-color: var(--light-color);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    box-shadow: 0 0px 7px -4px;
+    padding: 20px 0px 20px 20px;
+}
+
+.features-img,
+.features-content {
+    padding: 5px;
+}
+
+.features-content {
+    color: var(--text-main);
+}
+
+
+/* Courses Section */
+
+.course-title {
+    color: var(--text-main);
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.course-captions p {
+    color: var(--text-other);
+    margin: 10px 0;
+    padding: 5px 0;
+    line-height: 25px;
+}
+
+.course-captions a {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text-main);
+    margin: 5px 0;
+}
+
+.courses-items {
+    margin: 20px;
+    box-shadow: 0 0px 5px -4px;
+    border-radius: 10px;
+}
+
+.courses-content {
+    padding: 10px;
+}
+
+
+.course-ratting i {
+    margin: 20px 0;
+    width: 20px;
+    color: var(--object-color);
+}
+
+.review i {
+    color: var(--object-color);
+    padding-right: 10px;
+}
+
+.review {
+    color: var(--text-other);
+}
+
+
+.course-feedback p {
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.course-captions,
+.course-ratting,
+.course-feedback,
+.course-button {
+    padding: 10px;
+}
+
+.course-ratting {
+    margin-bottom: -30px;
+}
+
+.course-btn button {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+/* About Area (Learn new skills online) */
+.about-area-content {
+    padding: 50px 0;
+
+}
+
+.about-area-content h2 {
+    color: var(--text-main);
+    line-height: 30px;
+    padding: 10px 0;
+    font-weight: 900;
+}
+
+.about-area-content p {
+    line-height: 30px;
+    color: var(--text-other);
+}
+
+.about-area-content li {
+    font-size: 14px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+
+.about-area-content li i {
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+
+.about-area-content li i {
+    color: var(--object-color);
+}
+
+.about-area-video-icon {
+    color: var(--object-color);
+    font-size: 100px;
+}
+
+.about-area-video-icon {
+    align-content: center;
+    text-align: center;
+    height: 400px;
+}
+
+/* .Explore top subjects  */
+
+.Explore-title {
+    color: var(--text-main);
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+
+.Explore-subject {
+    color: var(--text-main);
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.explore-content {
+    position: relative;
+    overflow: hidden;
+    
+    width: 450px;
+    margin: 5px 10px;
+}
+
+.explore-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.3s ease-in-out;
+}
+
+.explore-content:hover::before {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.explore-content img {
+    width: 100%;
+}
+
+.explore-content p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--light-color);
+    font-weight: 800;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.explore-content:hover p {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.explore-btn button {
+    padding: 20px 40px;
+    margin: 20px 0;
+}
+
+/* About Area - 2  */
+
+.About-Area-2 {
+    margin: 150px 0 0 0;
+}
+
+
+.about-area-2-content {
+    padding: 0 20px;
+    margin-left: 40px;
+
+}
+
+.about-area-2-content h2 {
+    color: var(--text-main);
+    line-height: 50px;
+    padding: 10px 0;
+    font-size: 40px;
+}
+
+
+.about-area-2-content li {
+    font-size: 15px;
+    line-height: 30px;
+    padding: 7px 0;
+    display: flex;
+    align-items: center;
+}
+
+
+.about-area-2-content li i {
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+
+.about-area-2-content li i {
+    color: var(--object-color);
+}
+
+/* Community experts */
+
+
+.Community-experts-title {
+    color: var(--text-main);
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.experts-content {
+    text-align: center;
+}
+
+.experts-content h3 {
+    color: var(--text-main);
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+.experts-content p {
+    color: var(--text-other);
+    font-size: 18px;
+    text-align: center;
+}
+
+.comunity-experts-items {
+    margin: 0 30px;
+}
+
+/* About Area - 3 */
+
+.About-Area-3 {
+    margin: 150px 0 0 0;
+}
+
+.about-area-3-content h2 {
+    color: var(--text-main);
+    line-height: 50px;
+    padding: 10px 0;
+    font-size: 30px;
+}
+
+.about-area-3-content {
+    margin-left: 50px;
+}
+
+.about-area-3-content p {
+    color: var(--text-main);
+    line-height: 25px;
+}
+
+.About-Area-3-items {
+    margin: 0 10px;
+}
+
+.about-area-3-btn button {
+    margin: 20px 0;
+}
+
+/* Footer section */
+footer {
+    background-color: var(--text-main);
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+}
+
+.footer-items {
+    padding: 50px 0 50px 60px;
+
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-Paragraph p {
+    padding: 0;
+    line-height: 24px;
+    margin-bottom: 50px;
+    color: var(--light-color);
+    width: 80%;
+}
+
+.footer-icons i {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 5px;
+    background-color: rgba(128, 128, 128, 0.432);
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-icons i:hover {
+    background-color: var(--object-color);
+    color: var(--light-color);
+}
+
+.footer-title h3 {
+    font-size: 28px;
+    color: var(--light-color);
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: var(--light-color);
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.Footer .width-content-4 {
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.footer-copyright p {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--light-color);
+}
