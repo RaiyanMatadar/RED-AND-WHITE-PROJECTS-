@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Project</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" type="text/css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="Fonts/Work_Sans/static/stylesheet.css" type="text/css">
+    <!-- Remix icon -->
+    <link rel="stylesheet" href="Remix icons/remixicon.css" type="text/css">
+    <!-- main CSS -->
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg position-absolute z-3 w-100 py-4 border-bottom">
+        <div class="container">
+            <div class="logo">
+                <a href="javascript:void(0)" class="text-white fs-3 fw-bolder">ONEDER</a>
+            </div>
+
+            <a href="javascript:void(0)" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <i class="ri-menu-line fs-4 text-white"></i>
+            </a>
+
+            <nav class="navbar-collapse collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li><a href="javascript:void(0)" class="text-white mx-4">Home</a></li>
+                    <li id="about-us">
+                        <a href="javascript:void(0)" class="text-white mx-4 position-relative">About Us<i
+                                class="ri-arrow-down-s-line"></i></a>
+                        <ul class="about-us_sub-ul position-absolute p-0 py-2 left-0 bg-dark rounded mt-4 border-top border-primary">
+                            <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">Team</a></li>
+                            <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">Pricing</a></li>
+                            <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">FAQ</a></li>
+                            <li id="more-link">
+                                <a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1 position-relative">More links<i class="ri-arrow-right-s-line ms-4"></i></a>
+                                 <ul class="about-us_sub-ul-1 position-absolute start-100 top-100  w-100 p-0 py-2 bg-dark rounded border-top border-primary">
+                                    <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">Link -1 </a></li>
+                                    <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">Link -2 </a></li>
+                                    <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1 position-relative">Link - 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" class="text-white mx-4">Portfolio</a></li>
+                    <li><a href="javascript:void(0)" class="text-white mx-4">Services</a></li>
+                    <li><a href="javascript:void(0)" class="text-white mx-4">Testimonials</a></li>
+                    <li><a href="javascript:void(0)" class="text-white mx-4">Blog</a></li>
+                    <li><a href="javascript:void(0)" class="text-white mx-4">Content</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- banner -->
+        <section class="banner-section carousel slide" id="banner-indicators">
+            <div class="carousel-indicators">
+                <a href="javascript:void(0)" data-bs-target="#banner-indicators" data-bs-slide-to="0"
+                    class="active"></a>
+                <a href="javascript:void(0)" data-bs-target="#banner-indicators" data-bs-slide-to="1"></a>
+                <a href="javascript:void(0)" data-bs-target="#banner-indicators" data-bs-slide-to="2"></a>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="slider1 d-flex flex-column justify-content-center align-items-center text-center">
+                        <h1 class="h1 fw-bolder text-uppercase text-white z-1">I'm Creative One Page Template by
+                            Colorlib</h1>
+                        <a href="javascript:void(0)" class="btn bg-aqua text-white px-4 py-2 mt-4 rounded-5 z-1">Get in
+                            Touch</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="slider1 d-flex flex-column justify-content-center align-items-center text-center">
+                        <h1 class="h1 fw-bolder text-uppercase text-white z-1">I'm Creative One Page Template by
+                            Colorlib</h1>
+                        <a href="javascript:void(0)" class="btn bg-aqua text-white px-4 py-2 mt-4 rounded-5 z-1">Get in
+                            Touch</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="slider1 d-flex flex-column justify-content-center align-items-center text-center">
+                        <h1 class="h1 fw-bolder text-uppercase text-white z-1">I'm Creative One Page Template by
+                            Colorlib</h1>
+                        <a href="javascript:void(0)" class="btn bg-aqua text-white px-4 py-2 mt-4 rounded-5 z-1">Get in
+                            Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Oneder -->
+        <section class="about-section py-5">
+            <div class="container">
+                <div class="about-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">About Oneder</h2>
+                </div>
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-image">
+                            <img src="images/about.webp" alt="" class="img-fluid position-relative">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="my-3">For the next great business</h3>
+                        <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Quo tempora
+                            cumque
+                            eligendi in
+                            nostrum labore omnis quaerat.</p>
+                        <ul class="p-0 lh-lg">
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Officia quaerat eaque neque</li>
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Possimus aut consequuntur incidunt
+                            </li>
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Lorem ipsum dolor sit amet</li>
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Consectetur adipisicing elit</li>
+                        </ul>
+
+                        <a href="javascript:void(0)" class="btn btn-primary text-white px-4 py-2 mt-4 rounded-5">Get in
+                            Touch</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our team -->
+        <section class="our-team py-5">
+            <div class="container">
+                <div class="our-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Our team</h2>
+                    <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima <br /> neque
+                        tempora reiciendis.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P1.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Kaiara Spencer</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P2.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Dave Simpson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P3.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Ben Thompson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P4.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Kyla Stewart</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P5.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Kaiara Spencer</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P6.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Dave Simpson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P7.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Ben Thompson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P8.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Chris Stewart</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="portfolio py-5">
+            <div class="container">
+                <div class="portfolio-title text-center">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Portfolio</h2>
+                </div>
+
+                <ul class="nav nav-pills justify-content-center my-5">
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link active" data-bs-toggle="tab"
+                            data-bs-target="#all">ALL</a></li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#web">Web</a></li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#design">Design</a></li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#brand">Brand</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="all">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G1.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G2.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G3.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G4.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G5.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G6.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G7.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G8.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G9.webp" class="img-fluid" alt="">
+                                </div>
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G10.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G11.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G12.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3 text-center">
+                                    <img src="images/G13.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="web">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G1.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G10.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G4.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G2.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G12.webp" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G13.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="design">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G11.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G8.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G9.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G6.webp" class="img-fluid" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="brand">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G7.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G5.webp" class="img-fluid" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="portfolio-img my-3">
+                                    <img src="images/G3.webp" class="img-fluid" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+        <!-- our services -->
+        <section class="our-services py-5">
+            <div class="container">
+                <div class="services-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Our services</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-rocket-2-fill display-3 text-primary"></i>
+                            <h4>Business Consulting</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-line-chart-fill display-3 text-primary"></i>
+                            <h4>Market Analysis</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-tools-fill display-3 text-primary"></i>
+                            <h4>User Monitoring</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-alarm-warning-fill display-3 text-primary"></i>
+                            <h4>Insurance Consulting</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-customer-service-2-fill display-3 text-primary"></i>
+                            <h4>Financial Investment</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-bank-fill display-3 text-primary"></i>
+                            <h4>Financial Management</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="Testimonial py-5">
+            <div class="container">
+                <div class="Testimonial-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Testimonials</h2>
+                </div>
+
+                <div class="carousel slide" id="Testimonial">
+                    <div class="carousel-indicators" style="margin-bottom: -2rem;">
+                        <a href="javascript:void(0)" class="active" data-bs-target="#Testimonial"
+                            data-bs-slide-to="0"></a>
+                        <a href="javascript:void(0)" data-bs-target="#Testimonial" data-bs-slide-to="1"></a>
+                        <a href="javascript:void(0)" data-bs-target="#Testimonial" data-bs-slide-to="2"></a>
+                        <a href="javascript:void(0)" data-bs-target="#Testimonial" data-bs-slide-to="3"></a>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p style="width: 65%;" class="fs-4 text-muted">“Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Consectetur unde
+                                    reprehenderit
+                                    aperiam
+                                    quaerat
+                                    fugiat repudiandae explicao animi minima fuga beatae illum eligendi incidunt
+                                    consequatur.
+                                    Amet
+                                    dolores
+                                    excepturi earum unde iusto.”</p>
+                                <div class="testimonial-img d-flex justify-content-center align-items-center">
+                                    <img src="images/T1.webp" class="image-fluid rounded-circle" width="50px" alt="">
+                                    <p style="margin-bottom: 0;" class="mx-4 fs-5 text-muted">John smith</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p style="width: 65%;" class="fs-4 text-muted">“Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Consectetur unde
+                                    reprehenderit
+                                    aperiam
+                                    quaerat
+                                    fugiat repudiandae explicao animi minima fuga beatae illum eligendi incidunt
+                                    consequatur.
+                                    Amet
+                                    dolores
+                                    excepturi earum unde iusto.”</p>
+                                <div class="testimonial-img d-flex justify-content-center align-items-center">
+                                    <img src="/images/P1.webp" class="image-fluid rounded-circle" width="50px" alt="">
+                                    <p style="margin-bottom: 0;" class="mx-4 fs-5 text-muted">Roman Goargio</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p style="width: 65%;" class="fs-4 text-muted">“Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Consectetur unde
+                                    reprehenderit
+                                    aperiam
+                                    quaerat
+                                    fugiat repudiandae explicao animi minima fuga beatae illum eligendi incidunt
+                                    consequatur.
+                                    Amet
+                                    dolores
+                                    excepturi earum unde iusto.”</p>
+                                <div class="testimonial-img d-flex justify-content-center align-items-center">
+                                    <img src="images/T3.webp" class="image-fluid rounded-circle" width="50px" alt="">
+                                    <p style="margin-bottom: 0;" class="mx-4 fs-5 text-muted">Hakim malhar</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p style="width: 65%;" class="fs-4 text-muted">“Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Consectetur unde
+                                    reprehenderit
+                                    aperiam
+                                    quaerat
+                                    fugiat repudiandae explicao animi minima fuga beatae illum eligendi incidunt
+                                    consequatur.
+                                    Amet
+                                    dolores
+                                    excepturi earum unde iusto.”</p>
+                                <div class="testimonial-img d-flex justify-content-center align-items-center">
+                                    <img src="images/P5.webp" class="image-fluid rounded-circle" width="50px" alt="">
+                                    <p style="margin-bottom: 0;" class="mx-4 fs-5 text-muted">William Butcher</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="pricing py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="Testimonial-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Pricing</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="pricing-item text-center bg-white p-4">
+                            <h5 class="text-center fs-2 mb-3">Basic</h5>
+                            <p class="display-3 d-inline text-primary">$47</p><span
+                                class="text-secondary text-opacity-50 ">/ year</span>
+                            <ul class="text-start p-0 lh-lg mt-4">
+                                <li><i class="ri-check-line text-success fs-5 mx-2"></i>Officia quaerat eaque neque</li>
+                                <li><i class="ri-check-line text-success fs-5 mx-2"></i>Possimus aut consequuntur
+                                    incidunt</li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>Possimus aut consequuntur
+                                            incidunt</del></span></li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>Lorem ipsum, dolor sit
+                                            adipisicing</del></span></li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>itaque quidem aliquam
+                                            maiores</del></span></li>
+                            </ul>
+                            <a href="javascript:void(0)" class="btn btn-primary rounded-pill mt-4 px-4 py-2">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="pricing-item text-center bg-white p-4">
+                            <h5 class="text-center fs-2 mb-3">Premium</h5>
+                            <p class="display-3 d-inline text-primary">$200</p><span
+                                class="text-secondary text-opacity-50 ">/ year</span>
+                            <ul class="text-start p-0 lh-lg mt-4">
+                                <li><i class="ri-check-line text-success fs-5 mx-2"></i>Officia quaerat eaque neque</li>
+                                <li><i class="ri-check-line text-success fs-5 mx-2"></i>Possimus aut consequuntur
+                                    incidunt</li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>Possimus aut consequuntur
+                                            incidunt</del></span></li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>Lorem ipsum, dolor sit
+                                            adipisicing</del></span></li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>itaque quidem aliquam
+                                            maiores</del></span></li>
+                            </ul>
+                            <a href="javascript:void(0)" class="btn btn-primary rounded-pill mt-4 px-4 py-2">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="pricing-item text-center bg-white p-4">
+                            <h5 class="text-center fs-2 mb-3">Professional</h5>
+                            <p class="display-3 d-inline text-primary">$750</p><span
+                                class="text-secondary text-opacity-50 ">/ year</span>
+                            <ul class="text-start p-0 lh-lg mt-4">
+                                <li><i class="ri-check-line text-success fs-5 mx-2"></i>Officia quaerat eaque neque</li>
+                                <li><i class="ri-check-line text-success fs-5 mx-2"></i>Possimus aut consequuntur
+                                    incidunt</li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>Possimus aut consequuntur
+                                            incidunt</del></span></li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>Lorem ipsum, dolor sit
+                                            adipisicing</del></span></li>
+                                <li><i class="ri-check-line text-secondary text-opacity-50 fs-5 mx-2"></i><span
+                                        class="text-secondary text-opacity-50"><del>itaque quidem aliquam
+                                            maiores</del></span></li>
+                            </ul>
+                            <a href="javascript:void(0)" class="btn btn-primary rounded-pill mt-4 px-4 py-2">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (Frequently asked question) -->
+        <section class="FAQ py-5">
+            <div class="container">
+                <div class="FAQ-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Frequently asked question</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="accordion" id="accordion1">
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ1">Can I accept both Paypal and Stripe?</a>
+                                </div>
+                                <div class="collapse" id="FAQ1" data-bs-parent="#accordion1">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ2">What available is refund period?</a>
+                                </div>
+                                <div class="collapse" id="FAQ2" data-bs-parent="#accordion1">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ3">Can I accept both Paypal and Stripe?</a>
+                                </div>
+                                <div class="collapse" id="FAQ3" data-bs-parent="#accordion1">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ4">What available is refund period?</a>
+                                </div>
+                                <div class="collapse" id="FAQ4" data-bs-parent="#accordion1">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="accordion" id="accordion2">
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ5">Can I accept both Paypal and Stripe?</a>
+                                </div>
+                                <div class="collapse" id="FAQ5" data-bs-parent="#accordion2">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ6">What available is refund period?</a>
+                                </div>
+                                <div class="collapse" id="FAQ6" data-bs-parent="#accordion2">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ7">Can I accept both Paypal and Stripe?</a>
+                                </div>
+                                <div class="collapse" id="FAQ7" data-bs-parent="#accordion2">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-4">
+                                <div class="accordion-header">
+                                    <a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#FAQ8">What available is refund period?</a>
+                                </div>
+                                <div class="collapse" id="FAQ8" data-bs-parent="#accordion2">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about-2 -->
+        <section class="about2 py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about2-items ms-4">
+                            <i class="ri-brain-fill display-3 text-primary"></i>
+                            <h5>Web & Mobile Specialties</h5>
+                            <p class="text-muted" style="width: 70%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Perferendis
+                                quis molestiae vitae
+                                eligendi at.</p>
+
+                            <a href="javascript:void(0)" class="mt-1">Learn More</a>
+                        </div>
+
+                        <div class="about2-items ms-4">
+                            <i class="ri-smartphone-fill display-3 text-primary"></i>
+                            <h5>Intuitive Thinkers</h5>
+                            <p class="text-muted" style="width: 70%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Perferendis
+                                quis molestiae vitae
+                                eligendi at.</p>
+
+                            <a href="javascript:void(0)" class="mt-1">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about2-image">
+                            <img src="images/about.webp" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Our Blog -->
+        <section class="blog py-5">
+            <div class="container">
+                <div class="blog-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Our Blog</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card border-0 mx-3">
+                            <img src="images/G1.webp" class="img-fluid" alt="">
+                            <div class="card-body px-2">
+                                <h5 class="card-title my-3">Repudiandae Quisquam Eaque Dolore</h5>
+                                <ul class="p-0 text-muted">
+                                    <li>Ham Brook • Jan 18, 2019• News</li>
+                                </ul>
+                                <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                                    eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum
+                                    voluptatibus a eius.</p>
+                                <a href="javascript:void(0)" class="btn-primary">countinue Read...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card border-0 mx-3">
+                            <img src="images/G4.webp" class="img-fluid" alt="">
+                            <div class="card-body px-2">
+                                <h5 class="card-title my-3">Repudiandae Quisquam Eaque Dolore</h5>
+                                <ul class="p-0 text-muted">
+                                    <li>Ham Brook • Jan 18, 2019• News</li>
+                                </ul>
+                                <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                                    eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum
+                                    voluptatibus a eius.</p>
+                                <a href="javascript:void(0)" class="btn-primary">countinue Read...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card border-0 mx-3">
+                            <img src="images/G7.webp" class="img-fluid" alt="">
+                            <div class="card-body px-2">
+                                <h5 class="card-title my-3">Repudiandae Quisquam Eaque Dolore</h5>
+                                <ul class="p-0 text-muted">
+                                    <li>Ham Brook • Jan 18, 2019• News</li>
+                                </ul>
+                                <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                                    eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum
+                                    voluptatibus a eius.</p>
+                                <a href="javascript:void(0)" class="btn-primary">countinue Read...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us -->
+        <section class="Contact-us py-5">
+            <div class="container">
+                <div class="Contact-us-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Contact Us</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="contact-us-item text-center mb-4">
+                            <i class="ri-map-pin-2-fill fs-3 text-primary"></i>
+                            <p class="text-muted">203 Fake St. Mountain View, San Francisco, California, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="contact-us-item text-center  d-flex flex-column mb-4">
+                            <i class="ri-phone-fill fs-3 text-primary"></i>
+                            <a href="javascript:void(0)">+1 232 3235 324</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="contact-us-item text-center  d-flex flex-column mb-4">
+                            <i class="ri-mail-line fs-3 text-primary"></i>
+                            <a href="javascript:void(0)">raiyanmatadar001@gmail.com</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="bg-white p-5">
+                            <h5 class="mb-5">Contact Form</h5>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label class="mt-3">First Name</label>
+                                    <input type="text" class="form-control rounded-pill mt-2 p-2">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="mt-3">Last Name</label>
+                                    <input type="text" class="form-control rounded-pill mt-2 p-2">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="mt-3">Email</label>
+                                    <input type="email" class="form-control rounded-pill mt-2 p-2">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="mt-3">Subject</label>
+                                    <input type="email" class="form-control rounded-pill mt-2 p-2">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="mt-3">Message</label>
+                                    <textarea rows="5" class="form-control rounded mt-2 rounded-4"
+                                        placeholder="Write your notes or question here..."></textarea>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0)" class="btn btn-primary rounded-pill p-2 px-4 mt-3">Send
+                                Message</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-about">
+                        <h5 class="text-white mb-4">About Us</h5>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicingelit.
+                            Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="footer-links">
+                        <h5 class="text-white mb-4 ms-5">Quick Links</h5>
+                        <ul class="p-0 ms-lg-5">
+                            <li><a href="javascript:void(0)" class="mb-3">About Us</a></li>
+                            <li><a href="javascript:void(0)" class="mb-3">Services</a></li>
+                            <li><a href="javascript:void(0)" class="mb-3">Testimonial</a></li>
+                            <li><a href="javascript:void(0)" class="mb-3">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-white mb-4">Follow Us</h5>
+                    <div class="footer-icons">
+                        <i class="ri-facebook-fill pe-4"></i>
+                        <i class="ri-twitter-x-fill pe-4"></i>
+                        <i class="ri-instagram-line pe-4"></i>
+                        <i class="ri-linkedin-fill pe-4"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-white mb-4">Subscribe Newsletter</h5>
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter your email"
+                            class="form-control rounded-start-pill bg-transparent border-secondary">
+                        <a href="javascript:void(0)"
+                            class="btn btn-primary m-0 p-2 px-4 rounded-end-pill bg-white text-primary">Send</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p class="text-secondary text-center border-top pt-5 mt-5 border-secondary">Copyright ©2025 All rights
+                    reserved | This template is made with ♥ by Colorlib</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Js -->
+    <script src="JS/bootstrap.min.js"></script>
+</body>
+
+</html>

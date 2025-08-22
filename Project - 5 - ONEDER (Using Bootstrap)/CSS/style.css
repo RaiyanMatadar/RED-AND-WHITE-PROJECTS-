@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+/* main CSS start here */
+
+/* header */
+
+/* To remove menu border */
+.navbar-toggler {
+    border: none;
+}
+
+
+.about-us_sub-ul, 
+.about-us_sub-ul-1 {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 100ms ease-in-out;
+
+}
+
+#about-us:hover .about-us_sub-ul, #more-link:hover .about-us_sub-ul-1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* To align the ul inside of more links */
+.about-us_sub-ul-1 {
+    transform: translateY(-50px);
+}
+
+
+/* banner */
+/* to add banner backgrounds  */
+.slider1 {
+    width: 100%;
+    height: 650px;
+    background-image: url(../images/banner);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* To add gradient on background */
+.slider1::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.515);
+}
+
+.slider1 h1 {
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    width: 40%;
+}
+
+.slider1 a {
+    background-color: #007bff;
+}
+
+/* Changing bg color of btn  */
+.banner-section .btn:hover {
+    background-color: black;
+    border: none;
+}
+
+/* for making bg circle to  */
+/* about section img */
+.about-image{
+    position: relative;
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate(50px, 70px);
+    background-color: #d3d3d342;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/* to make sure that the image 
+around circle get hided */
+
+ @media (max-width:992px){
+    .about-image::before {
+        position: static;
+    }
+} 
+
+/* Our team */
+
+/* some modification to team cards */
+.card-body {
+    flex: 1 1 auto;
+    padding: 0;
+    color: var(--bs-card-color);
+}
+
+.our-team .card {
+    --bs-card-border-color: none;
+}
+
+.social-icons {
+    transform: translateX(-100%);
+    transition: all 300ms ease-in-out;
+}
+
+.our-team .card:hover .social-icons {
+    transform: translateX(0%);
+}
+
+/* .Testimonial */
+.Testimonial .carousel-indicators a {
+    background-color: #0d6efd;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.blog img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* footer */
+.footer-links ul li a {
+    color: rgb(255 255 255 / 28%);
+    transition: all 200ms ease-in-out;
+}
+
+.footer-links ul li:hover a {
+    color: white;
+}
+
+
+.footer-icons i {
+    color: #ffffff47;
+    transition: all 200ms ease-in-out;
+}
+
+.footer-icons i:hover {
+    color: white;
+} 
+
+footer .input-group input::placeholder {
+    color: #ffffff47;
+
+}
