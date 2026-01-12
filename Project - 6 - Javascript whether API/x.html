@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Live Weather + 7 Day Forecast</title>
+
+<style>
+    body{
+        font-family: "Poppins",sans-serif;
+        background: #eaeaea;
+        margin:0;
+        padding:20px;
+    }
+    .container{
+        max-width: 600px;
+        margin:auto;
+        background:#fff;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+    input{
+        width:100%;
+        padding:10px;
+        border-radius:6px;
+        border:1px solid #888;
+        margin-bottom:15px;
+    }
+    button{
+        padding:10px 15px;
+        border:none;
+        background:#0078ff;
+        color:#fff;
+        border-radius:6px;
+        cursor:pointer;
+        width:100%;
+    }
+    button:hover{background:#005ad3;}
+    .day-box{
+        background:#f3f3f3;
+        padding:10px;
+        border-radius:6px;
+        margin-bottom:10px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Weather App (Current + 7 Day Prediction)</h2>
+
+    <input type="text" id="city" placeholder="Enter City Name" />
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="current"></div>
+    <h3>7 Day Forecast</h3>
+    <div id="forecast"></div>
+</div>
+
+
+<script>
+
+async function getWeather(){
+    let city = document.getElementById("city").value.trim();
+    if(!city){ alert("Enter city"); return; }
+
+
+    let geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}`;
+    
+    let geoRes = await fetch(geoURL);
+    let geoData = await geoRes.json();
+    console.log(geoData)
+    
+    if(!geoData.results){ alert("City not found"); return; }
+
+    let lat = geoData.results[0].latitude;
+    let lon = geoData.results[0].longitude;
+
+    let url = `https://api.open-meteo.com/v1/forecast?
+        latitude=${lat}
+        &longitude=${lon}
+        &current=temperature_2m,relative_humidity_2m,wind_speed_10m
+        &daily=temperature_2m_max,temperature_2m_min,precipitation_sum,relative_humidity_2m_max
+        &forecast_days=7`.replace(/\s+/g,'');
+
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data)
+    showCurrent(data);
+    showForecast(data);
+}
+
+// -------------------
+// CURRENT WEATHER
+// -------------------
+function showCurrent(data){
+    let cur = data.current;
+
+    document.getElementById("current").innerHTML = `
+        <h3>Current Weather</h3>
+        <p><b>Temperature:</b> ${cur.temperature_2m}°C</p>
+        <p><b>Humidity:</b> ${cur.relative_humidity_2m}%</p>
+        <p><b>Wind:</b> ${cur.wind_speed_10m} m/s</p>
+    `;
+}
+
+// -------------------
+// 7 DAY FORECAST
+// -------------------
+function showForecast(data){
+    let d = data.daily;
+    let box = "";
+
+    for(let i=0; i<7; i++){
+        box += `
+        <div class="day-box">
+            <p><b>Day ${i+1}</b></p>
+            <p>Temp Max: ${d.temperature_2m_max[i]}°C</p>
+            <p>Temp Min: ${d.temperature_2m_min[i]}°C</p>
+            <p>Humidity: ${d.relative_humidity_2m_max[i]}%</p>
+            <p>Rain: ${d.precipitation_sum[i]} mm</p>
+        </div>
+        `;
+    }
+
+    document.getElementById("forecast").innerHTML = box;
+}
+
+</script>
+
+</body>
+</html>
