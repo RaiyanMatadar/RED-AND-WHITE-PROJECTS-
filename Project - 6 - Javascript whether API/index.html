@@ -4,87 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* Base reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+     <style>
+      :root {
+    --bg: #050505;
+    --card: #0f0f0f;
+    --border: #1f1f1f;
+    --accent: #ffffff;
+    --text-dim: #949494;
+    --text-bright: #ffffff;
+    --font: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Background */
 body {
-  min-height: 100vh;
-  background-color: #0f172a; /* slate-900 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-color: var(--bg);
+    color: var(--text-bright);
+    font-family: var(--font);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* Container */
 .container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background-color: #020617; /* slate-950 */
-  padding: 16px;
-  border-radius: 10px;
-  border: 1px solid #1e293b;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
-/* Input */
 #search {
-  width: 240px;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #e5e7eb;
-  font-size: 15px;
-  padding: 10px 4px;
-}
-
-/* Placeholder */
-#search::placeholder {
-  color: #64748b;
-}
-
-/* Button */
-button {
-  background-color: #e5e7eb;
-  color: #020617;
-  border: none;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-/* Button hover */
-button:hover {
-  background-color: #cbd5f5;
-}
-
-/* Focus state */
-.container:focus-within {
-  border-color: #94a3b8;
-}
-
-p {
-    color: white;
-}
- 
- #outputWhether{
+    width: 90%;
+    max-width: 450px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: var(--text-bright);
+    font-size: 16px;
     text-align: center;
-    margin: 20px;
-} 
-.container {
-    display: block;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-    </style>
-</head>
+
+#search:focus {
+    border-color: var(--text-dim);
+    background: #141414;
+}
+
+button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#outputWhether:empty, 
+#forcast:empty {
+    display: none;
+}
+
+#outputWhether {
+    width: 90%;
+    max-width: 600px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+#outputWhether p {
+    margin: 8px 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+#outputWhether p:nth-child(4) {
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-weight: 200;
+    color: var(--text-bright);
+    margin-top: 15px;
+    letter-spacing: -2px;
+}
+
+#forcast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 16px;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+}
+
+.day-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 12px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.day-box:hover {
+    border-color: #333;
+    transform: translateY(-4px);
+}
+
+.day-box b {
+    display: block;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.day-box p {
+    margin: 6px 0;
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+.day-box p:nth-child(2),
+.day-box p:nth-child(3) {
+    color: var(--text-bright);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsiveness Fixes */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    #forcast {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 10px;
+    }
+
+    .day-box {
+        padding: 15px 8px;
+    }
+
+    .day-box p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #forcast {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #outputWhether p:nth-child(4) {
+        font-size: 3rem;
+    }
+
+    button {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+     </style>
+     
+  </head>
 <body>
     <div class="container">
     <input type="text" id="search">
