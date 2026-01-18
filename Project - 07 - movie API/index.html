@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie API</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+            background-color: cyan; 
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input{
+            margin: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+   </style>
+</head>
+<body>
+    <h1>Movie API</h1>
+    <div class="container">
+        <div class="input-container">
+            <input class="input" type="text">
+            <button onclick="showData()">search</button>
+        </div>
+        <ul class="suggestion">
+
+        </ul>
+        <div class="movie-results">
+
+        </div>
+    </div>
+    
+    <script src="./dist/script.js" type="module"></script>
+</body>
+</html>
