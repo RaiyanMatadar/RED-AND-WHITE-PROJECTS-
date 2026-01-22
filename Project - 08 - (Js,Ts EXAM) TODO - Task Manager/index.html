@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-light">
+    <h1 class="text-center bg-black p-2 text-white">Task Manager</h1>
+
+    <div class="container mt-4">
+        <!-- Task Form -->
+        <div class="mb-3">
+            <label for="title" class="form-label">Task Title</label>
+            <input type="text" id="title" class="form-control" placeholder="Task Title">
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Task Description</label>
+            <textarea id="description" class="form-control" placeholder="Task Description" rows="3"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="dueDate" class="form-label">Due Date</label>
+            <input type="date" id="dueDate" class="form-control">
+        </div>
+        
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priority</label>
+            <select id="priority" class="form-select">
+                <option>Select Priority</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+        </div>
+        <button onclick="addTask()" class="btn btn-primary">Add Task</button>
+
+        <hr class="my-4">
+
+        <!-- for Filtering data by priority -->
+        <div class="row g-3 align-items-center">
+            <div class="col-md-6">
+                <label for="filterPriority" class="form-label">Filter by Priority</label>
+                <select id="filterPriority" class="form-select" onchange="filterTasks()">
+                    <option value="All">All</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="search" class="form-label">Search Task</label>
+                <input type="text" id="search" class="form-control" placeholder="Search task" onkeyup="filterTasks()">
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- Task List for adding task -->
+        <div id="taskList" class="mt-4"></div>
+    </div>
+
+    <script>
+
+        // storing data to local storage 
+let tasks = [];
+let taskId = 1;
+let editId = null;
+
+// this will execute on the load of window  
+window.onload = function () {
+    let storedData = localStorage.getItem("tasks");
+
+    if (storedData) {
+        tasks = JSON.parse(storedData);
+        displayTasks(tasks);
+
+        if (tasks.length > 0) {
+            taskId = tasks[tasks.length - 1].id + 1;
+        }
+    }
+};
+
+
+function addTask() {
+    // selecting DOM Element
+    let title = document.getElementById("title").value;
+    let description = document.getElementById("description").value;
+    let dueDate = document.getElementById("dueDate").value;
+    let priority = document.getElementById("priority").value;
+
+    // if the title or dueDate isnt given then the alert will apear and get return 
+    if (title === "" || dueDate === "") {
+        alert("Title and Due Date are required");
+        return;
+    }
+    
+    if (editId === null) {
+        let task = {
+            id: taskId,
+            title: title,
+            description: description,
+            dueDate: dueDate,
+            priority: priority
+        };
+        // this will add task object to the global task array 
+        tasks.push(task);
+        taskId++;
+
+    } else {
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i].id === editId) {
+                tasks[i].title = title;
+                tasks[i].description = description;
+                tasks[i].dueDate = dueDate;
+                tasks[i].priority = priority;
+            }
+        }
+        editId = null;
+    }
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    clearInputs();
+    displayTasks(tasks);
+}
+
+function displayTasks(taskArray) {
+    let taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
+
+    for (let i = 0; i < taskArray.length; i++) {
+        let task = taskArray[i];
+
+        // it will made the task with the bootstrap styling 
+        let div = document.createElement("div");
+        div.className = "card mb-3";
+        div.innerHTML = `
+            <div class="card-body">
+                <h4 class="card-title">${task.title}</h4>
+                <p class="card-text">${task.description}</p>
+                <p class="card-text"><small class="text-muted">Due: ${task.dueDate}</small></p>
+                <p class="card-text"><small class="text-muted">Priority: ${task.priority}</small></p>
+                <button class="btn btn-primary btn-sm me-2" onclick="editTask(${task.id})">Edit</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteTask(${task.id})">Delete</button>
+            </div>
+        `;
+        taskList.appendChild(div);
+    }
+}
+
+function editTask(id) {
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === id) {
+            document.getElementById("title").value = tasks[i].title;
+            document.getElementById("description").value = tasks[i].description;
+            document.getElementById("dueDate").value = tasks[i].dueDate;
+            document.getElementById("priority").value = tasks[i].priority;
+            editId = id;
+        }
+    }
+}
+
+// dealting task from the localStorage storage 
+function deleteTask(id) {
+    tasks = tasks.filter(function (task) {
+        return task.id !== id;
+    });
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    displayTasks(tasks);
+}
+
+// filtering data based on the priority 
+function filterTasks() {
+    let priorityFilter = document.getElementById("filterPriority").value;
+    let searchText = document.getElementById("search").value.toLowerCase();
+
+    let filteredTasks = tasks.filter(function (task) {
+        let matchPriority =
+            priorityFilter === "All" || task.priority === priorityFilter;
+
+        let matchSearch =
+            task.title.toLowerCase().includes(searchText) ||
+            task.description.toLowerCase().includes(searchText);
+
+        return matchPriority && matchSearch;
+    });
+
+    displayTasks(filteredTasks);
+}
+
+function clearInputs() {
+    document.getElementById("title").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("dueDate").value = "";
+    document.getElementById("priority").value = "";
+}
+
+
+    </script>
+</body>
+</html>

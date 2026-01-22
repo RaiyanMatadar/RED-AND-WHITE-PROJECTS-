@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c4f1c8;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+        }
+        #search-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
+        #search-container input, #search-container button, #search-container select {
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        #movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem auto;
+            padding: 0;
+            list-style: none;
+        }
+        .movie-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+        }
+        .movie-item:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        #movie-details {
+            display: none;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 1rem;
+        }
+        #poster {
+            max-width: 200px;
+            border-radius: 8px;
+        }
+        #back-to-list {
+            display: none;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #back-to-list:hover {
+            background-color: #0056b3;
+        }
+        .loader {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movie Search</h1>
+    </header>
+
+    <div id="search-container">
+        <input type="text" id="search" placeholder="Search for movies...">
+        <button onclick="searchMovies()">Search</button>
+        <select id="sort">
+            <option value="asc">Year - Ascending</option>
+            <option value="desc">Year - Descending</option>
+        </select>
+    </div>
+
+    <div class="loader" id="loader">Loading...</div>
+
+    <ul id="movie-list"></ul>
+
+    <div id="movie-details">
+        <img id="poster" src="https://th.bing.com/th/id/OIP.-L5B8cqwkxsNXGZcvjX06QHaJm?w=120&h=180&c=7&r=0&o=5&pid=1.7" alt="Movie Poster">
+        <div>
+            <h2 id="title"></h2>
+            <p><strong>Year:</strong> <span id="year"></span></p>
+            <p><strong>Genre:</strong> <span id="genre"></span></p>
+            <p><strong>Director:</strong> <span id="director"></span></p>
+            <p><strong>Plot:</strong> <span id="plot"></span></p>
+        </div>
+    </div>
+
+    <button id="back-to-list" onclick="showMovieList()">Back to List</button>
+
+    <script>
+        const apiKey = '10677d33';
+        const loader = document.getElementById('loader');
+
+        function showLoader(show) {
+            loader.style.display = show ? 'block' : 'none';
+        }
+
+        function searchMovies() {
+            const searchTerm = document.getElementById('search').value.trim();
+            const sortOrder = document.getElementById('sort').value;
+            if (!searchTerm) return;
+
+            localStorage.setItem('lastSearch', searchTerm);
+            showLoader(true);
+
+            fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
+                .then(response => response.json())
+                .then(data => {
+                    showLoader(false);
+                    const movieList = document.getElementById('movie-list');
+                    movieList.innerHTML = '';
+
+                    if (data.Search) {
+                        const sortedMovies = data.Search.sort((a, b) =>
+                            sortOrder === 'asc' ? a.Year - b.Year : b.Year - a.Year
+                        );
+                        console.log(sortedMovies)
+
+                        sortedMovies.forEach(movie => {
+                            const listItem = document.createElement('li');
+                            listItem.className = 'movie-item';
+                            listItem.textContent = `${movie.Title} (${movie.Year})`;
+                            listItem.onclick = () => getMovieDetails(movie.imdbID);
+                            movieList.appendChild(listItem);
+                        });
+                    } else {
+                        movieList.innerHTML = '<p>No movies found.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching movies:', error);
+                    showLoader(false);
+                });
+        }
+
+        function getMovieDetails(imdbID) {
+            localStorage.setItem('selectedMovieId', imdbID);
+            showLoader(true);
+
+            fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("movie data",data)
+                    showLoader(false);
+                    document.getElementById('poster').src = data.Poster || 'No Image';
+                    document.getElementById('title').textContent = data.Title;
+                    document.getElementById('year').textContent = data.Year;
+                    document.getElementById('genre').textContent = data.Genre;
+                    document.getElementById('director').textContent = data.Director;
+                    document.getElementById('plot').textContent = data.Plot;
+
+                    showMovieDetails();
+                })
+                .catch(error => {
+                    console.error('Error fetching movie details:', error);
+                    showLoader(false);
+                });
+        }
+
+        function showMovieDetails() {
+            document.getElementById('movie-list').style.display = 'none';
+            document.getElementById('movie-details').style.display = 'flex';
+            document.getElementById('back-to-list').style.display = 'block';
+        }
+
+        function showMovieList() {
+            document.getElementById('movie-list').style.display = 'flex';
+            document.getElementById('movie-details').style.display = 'none';
+            document.getElementById('back-to-list').style.display = 'none';
+        }
+
+        const lastSearch = localStorage.getItem('lastSearch');
+        if (lastSearch) {
+            document.getElementById('search').value = lastSearch;
+            searchMovies();
+        }
+    </script>
+</body>
+</html>
